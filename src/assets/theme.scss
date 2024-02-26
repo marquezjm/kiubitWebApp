@@ -1,0 +1,62 @@
+@use '@angular/material' as mat;
+@import  '@angular/material/theming';
+
+$my-primary: (
+    50 : #e3f2fd,
+    100 : #bbdefb,
+    200 : #90c9f9,
+    300 : #63b4f6,
+    400 : #42a4f5,
+    500 : #2194f3,
+    600 : #1f87e5,
+    700 : #1a75d2,
+    800 : #1764c0,
+    900 : #1045a1,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+    )
+);
+
+$my-accent: (
+    50 : #fce4ec,
+    100 : #f8bbd0,
+    200 : #f48fb0,
+    300 : #f06291,
+    400 : #ec4079,
+    500 : #e91e62,
+    600 : #d81b5f,
+    700 : #c2185a,
+    800 : #ad1356,
+    900 : #880d4e,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+    )
+);
+//$my-accent: mat.define-palette($mat-pink, A100, A200, A400, A700);
+// Define your custom theme here
+$custom-theme: mat.define-light-theme((
+  color: (
+    primary: mat-palette($my-primary),
+    accent: mat-palette($my-accent),
+  ),
+));
+
+@include mat.all-component-themes($custom-theme);
