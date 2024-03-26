@@ -107,6 +107,30 @@
                 <button mat-raised-button color="primary">Primary</button-->
             </div>
         </div>
-        <div class="main-lista">seccion lista</div>
+        <div class="main-lista">
+            <mat-accordion displayMode="flat" [multi]="false" cdkDropListGroup>
+                <mat-expansion-panel
+                  *ngFor="let chapter of chapters" 
+                  #chapterExpansionPanel
+                  (mouseenter)="mouseEnterHandler($event, chapterExpansionPanel)"
+                >
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      {{ chapter.name }}
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+              
+                    <mat-list 
+                      cdkDropList 
+                      
+                    >
+                      <mat-list-item cdkDrag *ngFor="let item of chapter.items">
+                        {{ item.name }}
+                      </mat-list-item>
+                    </mat-list>
+              
+                </mat-expansion-panel>
+              </mat-accordion>
+        </div>
     </div>
 </div>
